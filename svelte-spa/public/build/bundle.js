@@ -2539,9 +2539,14 @@ var app = (function () {
     const file = "src/App.svelte";
 
     function create_fragment(ctx) {
+    	let header;
+    	let button;
+    	let t1;
     	let main;
     	let router;
     	let current;
+    	let mounted;
+    	let dispose;
 
     	router = new Router({
     			props: { routes: /*routes*/ ctx[0] },
@@ -2550,18 +2555,33 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
+    			header = element("header");
+    			button = element("button");
+    			button.textContent = "FUAN⇨FUN";
+    			t1 = space();
     			main = element("main");
     			create_component(router.$$.fragment);
+    			attr_dev(button, "class", "moveHome");
+    			add_location(button, file, 16, 1, 302);
+    			add_location(header, file, 15, 0, 292);
     			attr_dev(main, "class", "svelte-vvofvc");
-    			add_location(main, file, 14, 0, 248);
+    			add_location(main, file, 19, 0, 383);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
     		},
     		m: function mount(target, anchor) {
+    			insert_dev(target, header, anchor);
+    			append_dev(header, button);
+    			insert_dev(target, t1, anchor);
     			insert_dev(target, main, anchor);
     			mount_component(router, main, null);
     			current = true;
+
+    			if (!mounted) {
+    				dispose = listen_dev(button, "click", /*click_handler*/ ctx[1], false, false, false);
+    				mounted = true;
+    			}
     		},
     		p: noop,
     		i: function intro(local) {
@@ -2574,8 +2594,12 @@ var app = (function () {
     			current = false;
     		},
     		d: function destroy(detaching) {
+    			if (detaching) detach_dev(header);
+    			if (detaching) detach_dev(t1);
     			if (detaching) detach_dev(main);
     			destroy_component(router);
+    			mounted = false;
+    			dispose();
     		}
     	};
 
@@ -2607,8 +2631,9 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<App> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ Router, Home, Add, Edit, routes });
-    	return [routes];
+    	const click_handler = () => push('/');
+    	$$self.$capture_state = () => ({ Router, push, Home, Add, Edit, routes });
+    	return [routes, click_handler];
     }
 
     class App extends SvelteComponentDev {

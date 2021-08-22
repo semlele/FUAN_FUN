@@ -1,5 +1,6 @@
 <script>
 	import Router from "svelte-spa-router";
+    import {push} from "svelte-spa-router";
 	import Home from "./Home.svelte";
 	import Add from "./Add.svelte";
 	import Edit from "./Edit.svelte";
@@ -11,6 +12,10 @@
 		"*": Home
 	};
 </script>
+
+<header>
+	<button class="moveHome" on:click={() => push('/')}>FUAN⇨FUN</button>
+</header>
 
 <main>
 	<Router routes={routes}></Router>
