@@ -2422,15 +2422,19 @@ var app = (function () {
 
     // (7:4) {#each notes as note,  index}
     function create_each_block(ctx) {
-    	let div2;
+    	let div3;
     	let div0;
     	let t0_value = /*note*/ ctx[2].title + "";
     	let t0;
     	let t1;
     	let div1;
-    	let t2_value = /*note*/ ctx[2].content + "";
+    	let t2_value = /*note*/ ctx[2].contentFuan + "";
     	let t2;
     	let t3;
+    	let div2;
+    	let t4_value = /*note*/ ctx[2].contentWO + "";
+    	let t4;
+    	let t5;
     	let mounted;
     	let dispose;
 
@@ -2440,41 +2444,50 @@ var app = (function () {
 
     	const block = {
     		c: function create() {
-    			div2 = element("div");
+    			div3 = element("div");
     			div0 = element("div");
     			t0 = text(t0_value);
     			t1 = space();
     			div1 = element("div");
     			t2 = text(t2_value);
     			t3 = space();
-    			attr_dev(div0, "class", "card-title svelte-19edwrb");
+    			div2 = element("div");
+    			t4 = text(t4_value);
+    			t5 = space();
+    			attr_dev(div0, "class", "card-title svelte-1cslkgj");
     			add_location(div0, file$2, 8, 12, 217);
-    			attr_dev(div1, "class", "card-content svelte-19edwrb");
+    			attr_dev(div1, "class", "card-contentFuan svelte-1cslkgj");
     			add_location(div1, file$2, 9, 12, 272);
-    			attr_dev(div2, "class", "card svelte-19edwrb");
-    			add_location(div2, file$2, 7, 8, 146);
+    			attr_dev(div2, "class", "card-contentWO svelte-1cslkgj");
+    			add_location(div2, file$2, 10, 12, 339);
+    			attr_dev(div3, "class", "card svelte-1cslkgj");
+    			add_location(div3, file$2, 7, 8, 146);
     		},
     		m: function mount(target, anchor) {
-    			insert_dev(target, div2, anchor);
-    			append_dev(div2, div0);
+    			insert_dev(target, div3, anchor);
+    			append_dev(div3, div0);
     			append_dev(div0, t0);
-    			append_dev(div2, t1);
-    			append_dev(div2, div1);
+    			append_dev(div3, t1);
+    			append_dev(div3, div1);
     			append_dev(div1, t2);
-    			append_dev(div2, t3);
+    			append_dev(div3, t3);
+    			append_dev(div3, div2);
+    			append_dev(div2, t4);
+    			append_dev(div3, t5);
 
     			if (!mounted) {
-    				dispose = listen_dev(div2, "click", click_handler, false, false, false);
+    				dispose = listen_dev(div3, "click", click_handler, false, false, false);
     				mounted = true;
     			}
     		},
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
     			if (dirty & /*notes*/ 1 && t0_value !== (t0_value = /*note*/ ctx[2].title + "")) set_data_dev(t0, t0_value);
-    			if (dirty & /*notes*/ 1 && t2_value !== (t2_value = /*note*/ ctx[2].content + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*notes*/ 1 && t2_value !== (t2_value = /*note*/ ctx[2].contentFuan + "")) set_data_dev(t2, t2_value);
+    			if (dirty & /*notes*/ 1 && t4_value !== (t4_value = /*note*/ ctx[2].contentWO + "")) set_data_dev(t4, t4_value);
     		},
     		d: function destroy(detaching) {
-    			if (detaching) detach_dev(div2);
+    			if (detaching) detach_dev(div3);
     			mounted = false;
     			dispose();
     		}
@@ -2509,7 +2522,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(div, "class", "note svelte-19edwrb");
+    			attr_dev(div, "class", "note svelte-1cslkgj");
     			add_location(div, file$2, 5, 0, 85);
     		},
     		l: function claim(nodes) {
@@ -2646,9 +2659,9 @@ var app = (function () {
     			h1.textContent = "Everyone's FUAN";
     			t1 = space();
     			create_component(notelist.$$.fragment);
-    			attr_dev(h1, "class", "list_title svelte-144bj9d");
+    			attr_dev(h1, "class", "list_title svelte-bwjd5j");
     			add_location(h1, file$1, 9, 4, 229);
-    			attr_dev(div, "class", "fuanlist");
+    			attr_dev(div, "class", "fuanlist svelte-bwjd5j");
     			add_location(div, file$1, 8, 0, 202);
     		},
     		l: function claim(nodes) {

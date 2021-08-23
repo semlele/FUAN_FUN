@@ -12,6 +12,10 @@
 </div>
 
 <style>
+    .fuanlist{
+        margin: 70px 0;
+    }
+
     .list_title {
 		margin-bottom: 1em;
 	}

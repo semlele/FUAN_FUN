@@ -7,8 +7,9 @@
     {#each notes as note,  index}
         <div class="card" on:click={() => push(`/edit/${index}`)}>
             <div class="card-title">{note.title}</div>
-            <div class="card-content">{note.content}</div>
-    </div>
+            <div class="card-contentFuan">{note.contentFuan}</div>
+            <div class="card-contentWO">{note.contentWO}</div>
+        </div>
     {/each}
 </div>
 
@@ -34,7 +35,12 @@
     margin-bottom: 0.5em;
     }
 
-    .card-content {
+    .card-contentFuan {
+    white-space: pre-wrap;
+    line-height: 1.5;
+    }
+
+    .card-contentWO {
     white-space: pre-wrap;
     line-height: 1.5;
     }
