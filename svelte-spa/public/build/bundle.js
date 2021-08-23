@@ -1647,8 +1647,13 @@ var app = (function () {
     	let t1;
     	let button;
     	let t3;
-    	let div;
+    	let div2;
+    	let h2;
     	let t5;
+    	let div0;
+    	let t7;
+    	let div1;
+    	let t9;
     	let footer;
     	let mounted;
     	let dispose;
@@ -1662,20 +1667,30 @@ var app = (function () {
     			button = element("button");
     			button.textContent = "get started!";
     			t3 = space();
-    			div = element("div");
-    			div.textContent = "about this site";
+    			div2 = element("div");
+    			h2 = element("h2");
+    			h2.textContent = "about this site";
     			t5 = space();
+    			div0 = element("div");
+    			div0.textContent = "hoge";
+    			t7 = space();
+    			div1 = element("div");
+    			div1.textContent = "paya";
+    			t9 = space();
     			footer = element("footer");
     			footer.textContent = "footer";
-    			attr_dev(h1, "class", "app-title svelte-laudun");
+    			attr_dev(h1, "class", "app-title svelte-pm9o5f");
     			add_location(h1, file$6, 7, 1, 74);
-    			attr_dev(button, "class", "getStart svelte-laudun");
+    			attr_dev(button, "class", "getStart svelte-pm9o5f");
     			add_location(button, file$6, 8, 1, 113);
-    			attr_dev(div, "class", "aboutThisSite svelte-laudun");
-    			add_location(div, file$6, 9, 1, 191);
+    			add_location(h2, file$6, 10, 2, 221);
+    			add_location(div0, file$6, 11, 2, 248);
+    			add_location(div1, file$6, 12, 2, 266);
+    			attr_dev(div2, "class", "aboutThisSite svelte-pm9o5f");
+    			add_location(div2, file$6, 9, 1, 191);
+    			attr_dev(footer, "class", "svelte-pm9o5f");
+    			add_location(footer, file$6, 14, 1, 291);
     			add_location(body, file$6, 6, 0, 66);
-    			attr_dev(footer, "class", "svelte-laudun");
-    			add_location(footer, file$6, 14, 0, 254);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1686,9 +1701,14 @@ var app = (function () {
     			append_dev(body, t1);
     			append_dev(body, button);
     			append_dev(body, t3);
-    			append_dev(body, div);
-    			insert_dev(target, t5, anchor);
-    			insert_dev(target, footer, anchor);
+    			append_dev(body, div2);
+    			append_dev(div2, h2);
+    			append_dev(div2, t5);
+    			append_dev(div2, div0);
+    			append_dev(div2, t7);
+    			append_dev(div2, div1);
+    			append_dev(body, t9);
+    			append_dev(body, footer);
 
     			if (!mounted) {
     				dispose = listen_dev(button, "click", /*click_handler*/ ctx[0], false, false, false);
@@ -1700,8 +1720,6 @@ var app = (function () {
     		o: noop,
     		d: function destroy(detaching) {
     			if (detaching) detach_dev(body);
-    			if (detaching) detach_dev(t5);
-    			if (detaching) detach_dev(footer);
     			mounted = false;
     			dispose();
     		}
