@@ -1,5 +1,4 @@
 <script>
-    import {push} from "svelte-spa-router";
     import NoteList from "./components/NoteList.svelte";
     import {loadNotes} from "./lib/storage";
 

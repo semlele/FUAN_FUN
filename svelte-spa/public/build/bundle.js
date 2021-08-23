@@ -1966,12 +1966,12 @@ var app = (function () {
     const storageKey = "sveltenote/notes";
 
     const loadNotes = () => {
-        const rawNotes = localStorage.getItem(storageKey);
+        const rawNotes = sessionStorage.getItem(storageKey);
         return rawNotes ? JSON.parse(rawNotes) : [];
     };
 
     const saveNotes = (notes) => {
-        localStorage.setItem(storageKey, JSON.stringify(notes));
+        sessionStorage.setItem(storageKey, JSON.stringify(notes));
     };
 
     const addNote = (note) => {
@@ -2660,9 +2660,9 @@ var app = (function () {
     			t1 = space();
     			create_component(notelist.$$.fragment);
     			attr_dev(h1, "class", "list_title svelte-bwjd5j");
-    			add_location(h1, file$1, 9, 4, 229);
+    			add_location(h1, file$1, 8, 4, 185);
     			attr_dev(div, "class", "fuanlist svelte-bwjd5j");
-    			add_location(div, file$1, 8, 0, 202);
+    			add_location(div, file$1, 7, 0, 158);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2711,7 +2711,7 @@ var app = (function () {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<FuanList> was created with unknown prop '${key}'`);
     	});
 
-    	$$self.$capture_state = () => ({ push, NoteList, loadNotes, userNotes });
+    	$$self.$capture_state = () => ({ NoteList, loadNotes, userNotes });
     	return [userNotes];
     }
 
@@ -2777,22 +2777,22 @@ var app = (function () {
     			main = element("main");
     			create_component(router.$$.fragment);
     			attr_dev(button0, "class", "moveHome svelte-64ewgp");
-    			add_location(button0, file, 19, 3, 419);
+    			add_location(button0, file, 17, 3, 423);
     			attr_dev(div0, "class", "appTitle");
-    			add_location(div0, file, 18, 2, 393);
+    			add_location(div0, file, 16, 2, 397);
     			attr_dev(button1, "class", "moveAbout");
-    			add_location(button1, file, 22, 3, 530);
+    			add_location(button1, file, 20, 3, 534);
     			attr_dev(button2, "class", "moveContact");
-    			add_location(button2, file, 23, 3, 611);
+    			add_location(button2, file, 21, 3, 615);
     			attr_dev(button3, "class", "moveFuan");
-    			add_location(button3, file, 24, 3, 686);
+    			add_location(button3, file, 22, 3, 690);
     			attr_dev(div1, "class", "header_links svelte-64ewgp");
-    			add_location(div1, file, 21, 2, 500);
+    			add_location(div1, file, 19, 2, 504);
     			attr_dev(div2, "class", "header_container svelte-64ewgp");
-    			add_location(div2, file, 17, 1, 360);
-    			add_location(header, file, 16, 0, 350);
+    			add_location(div2, file, 15, 1, 364);
+    			add_location(header, file, 14, 0, 354);
     			attr_dev(main, "class", "svelte-64ewgp");
-    			add_location(main, file, 29, 0, 796);
+    			add_location(main, file, 27, 0, 800);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2906,10 +2906,10 @@ var app = (function () {
     }
 
     const app = new App({
-    	target: document.body,
-    	props: {
-    		name: 'world'
-    	}
+        target: document.body,
+        props: {
+            name: 'world'
+        }
     });
 
     return app;
