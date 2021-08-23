@@ -3,25 +3,27 @@
     import NoteEditor from './components/NoteEditor.svelte';
     import { addNote } from './lib/storage';
 
-    let title = '新しいノート';
-    let content = '';
+    let title = 'your name';
+    let contentFuan = 'What is "FUAN" about looking for job?';
+    let contentWO = 'What are you working on?';
 
     const onSave = () =>  {
-    addNote({title, content});
-    push('/');
+    addNote({title, contentFuan, contentWO});
+    push('/fuanlist');
     };
 </script>
 
 <div class="add">
-    <NoteEditor bind:title={title} bind:content={content}></NoteEditor>
+    <NoteEditor bind:title={title} bind:contentFuan={contentFuan} bind:contentWO={contentWO}></NoteEditor>
     <div class="button-container">
-    <button class="save" on:click={onSave} disabled={!title || !content}>保存</button>
+        <button class="save" on:click={onSave} disabled={!title || !contentFuan || !contentWO}>FUAN を SHARE する</button>
     </div>
-</div>
+</div>  
 
 <style>
     .add {
     display: flex;
+    padding: 100px;
     flex-direction: column;
     height: 100%;
     }

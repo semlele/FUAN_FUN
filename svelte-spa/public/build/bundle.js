@@ -1771,8 +1771,10 @@ var app = (function () {
     function create_fragment$5(ctx) {
     	let div;
     	let input;
-    	let t;
-    	let textarea;
+    	let t0;
+    	let textarea0;
+    	let t1;
+    	let textarea1;
     	let mounted;
     	let dispose;
 
@@ -1780,16 +1782,21 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			input = element("input");
-    			t = space();
-    			textarea = element("textarea");
-    			attr_dev(input, "class", "title svelte-pp5tkh");
+    			t0 = space();
+    			textarea0 = element("textarea");
+    			t1 = space();
+    			textarea1 = element("textarea");
+    			attr_dev(input, "class", "title svelte-19nuzjl");
     			attr_dev(input, "placeholder", "タイトル");
-    			add_location(input, file$5, 6, 4, 91);
-    			attr_dev(textarea, "class", "content svelte-pp5tkh");
-    			attr_dev(textarea, "placeholder", "本文");
-    			add_location(textarea, file$5, 7, 4, 155);
-    			attr_dev(div, "class", "editor svelte-pp5tkh");
-    			add_location(div, file$5, 5, 0, 66);
+    			add_location(input, file$5, 7, 4, 121);
+    			attr_dev(textarea0, "class", "contentFuan svelte-19nuzjl");
+    			attr_dev(textarea0, "placeholder", "本文");
+    			add_location(textarea0, file$5, 8, 4, 185);
+    			attr_dev(textarea1, "class", "contentWO svelte-19nuzjl");
+    			attr_dev(textarea1, "placeholder", "本文");
+    			add_location(textarea1, file$5, 9, 4, 273);
+    			attr_dev(div, "class", "editor svelte-19nuzjl");
+    			add_location(div, file$5, 6, 0, 96);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -1798,14 +1805,18 @@ var app = (function () {
     			insert_dev(target, div, anchor);
     			append_dev(div, input);
     			set_input_value(input, /*title*/ ctx[0]);
-    			append_dev(div, t);
-    			append_dev(div, textarea);
-    			set_input_value(textarea, /*content*/ ctx[1]);
+    			append_dev(div, t0);
+    			append_dev(div, textarea0);
+    			set_input_value(textarea0, /*contentFuan*/ ctx[1]);
+    			append_dev(div, t1);
+    			append_dev(div, textarea1);
+    			set_input_value(textarea1, /*contentWO*/ ctx[2]);
 
     			if (!mounted) {
     				dispose = [
-    					listen_dev(input, "input", /*input_input_handler*/ ctx[2]),
-    					listen_dev(textarea, "input", /*textarea_input_handler*/ ctx[3])
+    					listen_dev(input, "input", /*input_input_handler*/ ctx[3]),
+    					listen_dev(textarea0, "input", /*textarea0_input_handler*/ ctx[4]),
+    					listen_dev(textarea1, "input", /*textarea1_input_handler*/ ctx[5])
     				];
 
     				mounted = true;
@@ -1816,8 +1827,12 @@ var app = (function () {
     				set_input_value(input, /*title*/ ctx[0]);
     			}
 
-    			if (dirty & /*content*/ 2) {
-    				set_input_value(textarea, /*content*/ ctx[1]);
+    			if (dirty & /*contentFuan*/ 2) {
+    				set_input_value(textarea0, /*contentFuan*/ ctx[1]);
+    			}
+
+    			if (dirty & /*contentWO*/ 4) {
+    				set_input_value(textarea1, /*contentWO*/ ctx[2]);
     			}
     		},
     		i: noop,
@@ -1844,8 +1859,9 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('NoteEditor', slots, []);
     	let { title } = $$props;
-    	let { content } = $$props;
-    	const writable_props = ['title', 'content'];
+    	let { contentFuan } = $$props;
+    	let { contentWO } = $$props;
+    	const writable_props = ['title', 'contentFuan', 'contentWO'];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== '$$' && key !== 'slot') console.warn(`<NoteEditor> was created with unknown prop '${key}'`);
@@ -1856,34 +1872,48 @@ var app = (function () {
     		$$invalidate(0, title);
     	}
 
-    	function textarea_input_handler() {
-    		content = this.value;
-    		$$invalidate(1, content);
+    	function textarea0_input_handler() {
+    		contentFuan = this.value;
+    		$$invalidate(1, contentFuan);
+    	}
+
+    	function textarea1_input_handler() {
+    		contentWO = this.value;
+    		$$invalidate(2, contentWO);
     	}
 
     	$$self.$$set = $$props => {
     		if ('title' in $$props) $$invalidate(0, title = $$props.title);
-    		if ('content' in $$props) $$invalidate(1, content = $$props.content);
+    		if ('contentFuan' in $$props) $$invalidate(1, contentFuan = $$props.contentFuan);
+    		if ('contentWO' in $$props) $$invalidate(2, contentWO = $$props.contentWO);
     	};
 
-    	$$self.$capture_state = () => ({ title, content });
+    	$$self.$capture_state = () => ({ title, contentFuan, contentWO });
 
     	$$self.$inject_state = $$props => {
     		if ('title' in $$props) $$invalidate(0, title = $$props.title);
-    		if ('content' in $$props) $$invalidate(1, content = $$props.content);
+    		if ('contentFuan' in $$props) $$invalidate(1, contentFuan = $$props.contentFuan);
+    		if ('contentWO' in $$props) $$invalidate(2, contentWO = $$props.contentWO);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [title, content, input_input_handler, textarea_input_handler];
+    	return [
+    		title,
+    		contentFuan,
+    		contentWO,
+    		input_input_handler,
+    		textarea0_input_handler,
+    		textarea1_input_handler
+    	];
     }
 
     class NoteEditor extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$5, create_fragment$5, safe_not_equal, { title: 0, content: 1 });
+    		init(this, options, instance$5, create_fragment$5, safe_not_equal, { title: 0, contentFuan: 1, contentWO: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -1899,8 +1929,12 @@ var app = (function () {
     			console.warn("<NoteEditor> was created without expected prop 'title'");
     		}
 
-    		if (/*content*/ ctx[1] === undefined && !('content' in props)) {
-    			console.warn("<NoteEditor> was created without expected prop 'content'");
+    		if (/*contentFuan*/ ctx[1] === undefined && !('contentFuan' in props)) {
+    			console.warn("<NoteEditor> was created without expected prop 'contentFuan'");
+    		}
+
+    		if (/*contentWO*/ ctx[2] === undefined && !('contentWO' in props)) {
+    			console.warn("<NoteEditor> was created without expected prop 'contentWO'");
     		}
     	}
 
@@ -1912,11 +1946,19 @@ var app = (function () {
     		throw new Error("<NoteEditor>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	get content() {
+    	get contentFuan() {
     		throw new Error("<NoteEditor>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	set content(value) {
+    	set contentFuan(value) {
+    		throw new Error("<NoteEditor>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get contentWO() {
+    		throw new Error("<NoteEditor>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set contentWO(value) {
     		throw new Error("<NoteEditor>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -1952,7 +1994,8 @@ var app = (function () {
     	let div1;
     	let noteeditor;
     	let updating_title;
-    	let updating_content;
+    	let updating_contentFuan;
+    	let updating_contentWO;
     	let t0;
     	let div0;
     	let button;
@@ -1963,11 +2006,15 @@ var app = (function () {
     	let dispose;
 
     	function noteeditor_title_binding(value) {
-    		/*noteeditor_title_binding*/ ctx[3](value);
+    		/*noteeditor_title_binding*/ ctx[4](value);
     	}
 
-    	function noteeditor_content_binding(value) {
-    		/*noteeditor_content_binding*/ ctx[4](value);
+    	function noteeditor_contentFuan_binding(value) {
+    		/*noteeditor_contentFuan_binding*/ ctx[5](value);
+    	}
+
+    	function noteeditor_contentWO_binding(value) {
+    		/*noteeditor_contentWO_binding*/ ctx[6](value);
     	}
 
     	let noteeditor_props = {};
@@ -1976,13 +2023,18 @@ var app = (function () {
     		noteeditor_props.title = /*title*/ ctx[0];
     	}
 
-    	if (/*content*/ ctx[1] !== void 0) {
-    		noteeditor_props.content = /*content*/ ctx[1];
+    	if (/*contentFuan*/ ctx[1] !== void 0) {
+    		noteeditor_props.contentFuan = /*contentFuan*/ ctx[1];
+    	}
+
+    	if (/*contentWO*/ ctx[2] !== void 0) {
+    		noteeditor_props.contentWO = /*contentWO*/ ctx[2];
     	}
 
     	noteeditor = new NoteEditor({ props: noteeditor_props, $$inline: true });
     	binding_callbacks.push(() => bind(noteeditor, 'title', noteeditor_title_binding));
-    	binding_callbacks.push(() => bind(noteeditor, 'content', noteeditor_content_binding));
+    	binding_callbacks.push(() => bind(noteeditor, 'contentFuan', noteeditor_contentFuan_binding));
+    	binding_callbacks.push(() => bind(noteeditor, 'contentWO', noteeditor_contentWO_binding));
 
     	const block = {
     		c: function create() {
@@ -1991,14 +2043,14 @@ var app = (function () {
     			t0 = space();
     			div0 = element("div");
     			button = element("button");
-    			t1 = text("保存");
-    			attr_dev(button, "class", "save svelte-1asccat");
-    			button.disabled = button_disabled_value = !/*title*/ ctx[0] || !/*content*/ ctx[1];
-    			add_location(button, file$4, 17, 4, 432);
-    			attr_dev(div0, "class", "button-container svelte-1asccat");
-    			add_location(div0, file$4, 16, 4, 397);
-    			attr_dev(div1, "class", "add svelte-1asccat");
-    			add_location(div1, file$4, 14, 0, 303);
+    			t1 = text("FUAN を SHARE する");
+    			attr_dev(button, "class", "save svelte-gt7rvk");
+    			button.disabled = button_disabled_value = !/*title*/ ctx[0] || !/*contentFuan*/ ctx[1] || !/*contentWO*/ ctx[2];
+    			add_location(button, file$4, 18, 8, 586);
+    			attr_dev(div0, "class", "button-container svelte-gt7rvk");
+    			add_location(div0, file$4, 17, 4, 547);
+    			attr_dev(div1, "class", "add svelte-gt7rvk");
+    			add_location(div1, file$4, 15, 0, 418);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -2013,7 +2065,7 @@ var app = (function () {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen_dev(button, "click", /*onSave*/ ctx[2], false, false, false);
+    				dispose = listen_dev(button, "click", /*onSave*/ ctx[3], false, false, false);
     				mounted = true;
     			}
     		},
@@ -2026,15 +2078,21 @@ var app = (function () {
     				add_flush_callback(() => updating_title = false);
     			}
 
-    			if (!updating_content && dirty & /*content*/ 2) {
-    				updating_content = true;
-    				noteeditor_changes.content = /*content*/ ctx[1];
-    				add_flush_callback(() => updating_content = false);
+    			if (!updating_contentFuan && dirty & /*contentFuan*/ 2) {
+    				updating_contentFuan = true;
+    				noteeditor_changes.contentFuan = /*contentFuan*/ ctx[1];
+    				add_flush_callback(() => updating_contentFuan = false);
+    			}
+
+    			if (!updating_contentWO && dirty & /*contentWO*/ 4) {
+    				updating_contentWO = true;
+    				noteeditor_changes.contentWO = /*contentWO*/ ctx[2];
+    				add_flush_callback(() => updating_contentWO = false);
     			}
 
     			noteeditor.$set(noteeditor_changes);
 
-    			if (!current || dirty & /*title, content*/ 3 && button_disabled_value !== (button_disabled_value = !/*title*/ ctx[0] || !/*content*/ ctx[1])) {
+    			if (!current || dirty & /*title, contentFuan, contentWO*/ 7 && button_disabled_value !== (button_disabled_value = !/*title*/ ctx[0] || !/*contentFuan*/ ctx[1] || !/*contentWO*/ ctx[2])) {
     				prop_dev(button, "disabled", button_disabled_value);
     			}
     		},
@@ -2069,12 +2127,13 @@ var app = (function () {
     function instance$4($$self, $$props, $$invalidate) {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots('Add', slots, []);
-    	let title = '新しいノート';
-    	let content = '';
+    	let title = 'your name';
+    	let contentFuan = 'What is "FUAN" about looking for job?';
+    	let contentWO = 'What are you working on?';
 
     	const onSave = () => {
-    		addNote({ title, content });
-    		push('/');
+    		addNote({ title, contentFuan, contentWO });
+    		push('/fuanlist');
     	};
 
     	const writable_props = [];
@@ -2088,9 +2147,14 @@ var app = (function () {
     		$$invalidate(0, title);
     	}
 
-    	function noteeditor_content_binding(value) {
-    		content = value;
-    		$$invalidate(1, content);
+    	function noteeditor_contentFuan_binding(value) {
+    		contentFuan = value;
+    		$$invalidate(1, contentFuan);
+    	}
+
+    	function noteeditor_contentWO_binding(value) {
+    		contentWO = value;
+    		$$invalidate(2, contentWO);
     	}
 
     	$$self.$capture_state = () => ({
@@ -2098,20 +2162,30 @@ var app = (function () {
     		NoteEditor,
     		addNote,
     		title,
-    		content,
+    		contentFuan,
+    		contentWO,
     		onSave
     	});
 
     	$$self.$inject_state = $$props => {
     		if ('title' in $$props) $$invalidate(0, title = $$props.title);
-    		if ('content' in $$props) $$invalidate(1, content = $$props.content);
+    		if ('contentFuan' in $$props) $$invalidate(1, contentFuan = $$props.contentFuan);
+    		if ('contentWO' in $$props) $$invalidate(2, contentWO = $$props.contentWO);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [title, content, onSave, noteeditor_title_binding, noteeditor_content_binding];
+    	return [
+    		title,
+    		contentFuan,
+    		contentWO,
+    		onSave,
+    		noteeditor_title_binding,
+    		noteeditor_contentFuan_binding,
+    		noteeditor_contentWO_binding
+    	];
     }
 
     class Add extends SvelteComponentDev {
