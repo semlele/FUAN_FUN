@@ -1,32 +1,49 @@
 <script>
     import {push} from "svelte-spa-router";
-    import NoteList from "./components/NoteList.svelte";
-    import {loadNotes} from "./lib/storage";
 
-    const userNotes = loadNotes();
 </script>
 
-<div class="home">
-    <h1 class="app-title">Svelte Note</h1>
-    <NoteList notes={userNotes}></NoteList>
-    <button class="add" on:click={() => push('/add')}>+新しいノート</button>
-</div>
+
+<body>
+	<h1 class="app-title">App:titile</h1>
+	<button class="getStart" on:click={() => push('/add')}>get started!</button>
+	<div class="aboutThisSite">
+		about this site
+	</div>
+</body>
+
+<footer>
+	footer
+</footer>
 
 <style>
-    .app-title {
-		margin-bottom: 1em;
+	.app-title{
+		color: aliceblue;
+		height: 100%;
+		background-image: url(forest.jpeg);
+		background-size: cover;
 	}
 
-	.add {
+	.getStart {
+		position: fixed;
+		top:2;
 		display: block;
-		background-color: rgb(75, 168, 51);
+		background-color: forestgreen;
 		border: none;
 		box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 		color: white;
 		font-size: 1.5em;
-		width: 100%;
+		width: 30%;
 		padding: 0.5em 0;
-		margin: 1em 0;
+		margin: 15em 25em;
 		cursor: pointer;
     }
+
+	.aboutThisSite{
+		padding: 1px 0;
+	}
+
+	footer{
+		padding: 100px 0 0 0;
+	}
 </style>
