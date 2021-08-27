@@ -15,6 +15,7 @@
 <style>
     .editor {
     display: flex;
+    margin: 5em 0 0 5em;
     flex-direction: column;
     height: 100%;
     }
@@ -36,7 +37,7 @@
     background-color: transparent;
     border: none;
     border-left: 2px solid forestgreen;
-    font-size: 35px;
+    font-size: 40px;
     padding: 0.5rem 1rem;
     margin-bottom: 0.3em;
     width: 100%;

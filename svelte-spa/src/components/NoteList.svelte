@@ -5,7 +5,7 @@
 
 <div class="note">
     {#each notes as note,  index}
-        <div class="card" on:click={() => push(`/edit/${index}`)}>
+        <div class="card">
             <div class="card-title"><span style="color:green;">Name:</span> &nbsp&nbsp&nbsp;{note.title}</div>
             <div class="card-job"><span style="color:green;">Carrer:</span> &nbsp&nbsp&nbsp;{note.jobName}</div>
             <div class="card-contentFuan"><span style="color:green;">Fuan:</span> &nbsp&nbsp&nbsp;{note.contentFuan}</div>
@@ -16,14 +16,17 @@
 
 <style>
     .note {
+        margin-top: 80px;
         color: rgb(black);
     }
 
     .card{
+        display: table;
         background-color: rgb(255, 254, 253);
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
         padding: 1em;
-        margin: 3em 10em;
+        margin: 3em auto;
+        border-radius: 30px;
         cursor: pointer;
     }
 

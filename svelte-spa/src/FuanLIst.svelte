@@ -13,11 +13,14 @@
 <style>
     .fuanlist{
         margin: 80px 0 70px 0;
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
-    .list_title {
-		margin: 30px 0;
+    .list_title{
+        font-size: 300%;
+		margin-top: 150px;
+        padding-bottom: 50px;
+        text-align: center;
+        border-bottom: 3px dashed #000;
 	}
-
 </style>

@@ -2,13 +2,11 @@
 	import Router from "svelte-spa-router";
 	import Home from "./Home.svelte";
 	import Add from "./Add.svelte";
-	import Edit from "./Edit.svelte";
     import FuanList from "./FuanList.svelte";
 
 	const routes = {
 		"/": Home,
 		"/add": Add,
-		"/edit/:id": Edit,
 		"/fuanlist": FuanList
 	};
 </script>
@@ -39,6 +37,7 @@
 		background-color: rgba(0, 0, 0, 0.8);
 	}
 
+	
 	.appTitle{
 		position: absolute;
 		left: 20px;
@@ -83,7 +82,7 @@
 	}
 
 	main {
-		background-color: rgb(255, 251, 246);
+		background-color: rgb(230, 230, 180);
 		width: 100%;
 		height: 100%;
 		overflow-y: auto;

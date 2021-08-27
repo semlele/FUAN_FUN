@@ -83,7 +83,6 @@
 
 	.aboutThisSite{
 		padding: 180px 0;
-		background-color:rgb(230, 230, 180);
 		font-family: "Hiragino Kaku Gothic ProN";
 		text-align: center;
 	}
@@ -120,6 +119,7 @@
 		padding: 30px 0 ;
 		border-top: 1px ridge black;
 		text-align: center;
+		background-color: white;
 	}
 
 	.explain{
