@@ -1,6 +1,6 @@
 # App Title: FUAN⇨FUN
 ---
-*This is the web application developed for Geek-CAMP hackathon.*
+*This is the web application developed for Geek-CAMP hackathon vol.8 held on 8/27-8/28 in 2021 @online(Zoom).*
 ---
 *I developed this application assuming that students, working on job hunting, are worried about it.*
 
