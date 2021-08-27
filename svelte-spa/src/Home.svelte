@@ -58,7 +58,7 @@
 		bottom: 75%;
 		right: 10%;
 		display: block;
-		border-radius: 40px;
+		border-radius: 50px;
 		font-weight: bold;
 		font-family: "Hiragino Kaku Gothic ProN";
 		background-color: white;
@@ -68,7 +68,7 @@
 		box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
 		font-size: 130%;
 		width: 20%;
-		padding: 1em 1.5em;
+		padding: 1.3em 1.5em;
 		cursor: pointer;
 		background-image: linear-gradient(45deg, forestgreen 50%, transparent 50%);
 		background-position: 100%;
