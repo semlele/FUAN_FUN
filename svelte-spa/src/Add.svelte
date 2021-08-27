@@ -3,20 +3,21 @@
     import NoteEditor from './components/NoteEditor.svelte';
     import { addNote } from './lib/storage';
 
-    let title = 'your name';
-    let contentFuan = 'What is "FUAN" about looking for job?';
-    let contentWO = 'What are you working on?';
+    let title = '';
+    let jobName = '';
+    let contentFuan = '';
+    let contentWO = '';
 
     const onSave = () =>  {
-    addNote({title, contentFuan, contentWO});
+    addNote({title, jobName, contentFuan, contentWO});
     push('/fuanlist');
     };
 </script>
 
 <div class="add">
-    <NoteEditor bind:title={title} bind:contentFuan={contentFuan} bind:contentWO={contentWO}></NoteEditor>
+    <NoteEditor bind:title={title} bind:jobName={jobName} bind:contentFuan={contentFuan} bind:contentWO={contentWO}></NoteEditor>
     <div class="button-container">
-        <button class="save" on:click={onSave} disabled={!title || !contentFuan || !contentWO}>FUAN を SHARE する</button>
+        <button class="save" on:click={onSave} disabled={!title || !jobName || !contentFuan || !contentWO}>FUAN を SHARE する</button>
     </div>
 </div>  
 
@@ -34,12 +35,12 @@
     }
 
     .save {
-    background-color: rgb(62, 68, 163);
+    background-color:forestgreen;
     border: none;
-    border-radius: 3px;
+    border-radius: 30px;
     color: white;
     font-size: 1em;
-    padding: 0.5em 1em;
+    padding: 1em 3em;
     cursor: pointer;
     }
 

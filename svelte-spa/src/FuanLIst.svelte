@@ -5,18 +5,19 @@
     const userNotes = loadNotes();
 </script>
 
-<div class="fuanlist">
+<div class="fuanlist" id="fuan">
     <h1 class="list_title">Everyone's FUAN</h1>
     <NoteList notes={userNotes}></NoteList>
 </div>
 
 <style>
     .fuanlist{
-        margin: 70px 0;
+        margin: 80px 0 70px 0;
+        font-size: 1em;
     }
 
     .list_title {
-		margin-bottom: 1em;
+		margin: 30px 0;
 	}
 
 </style>

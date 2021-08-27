@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Router from "svelte-spa-router";
-    import {push} from "svelte-spa-router";
 	import Home from "./Home.svelte";
 	import Add from "./Add.svelte";
 	import Edit from "./Edit.svelte";
@@ -17,12 +16,11 @@
 <header>
 	<div class="header_container">
 		<div class="appTitle">
-			<button class="moveHome" on:click={() => push('/')}>FUAN⇨FUN</button>
+			<a href="#top"><img src="title.png" alt=""  class="moveHome"></a>
 		</div>
 		<div class="header_links">
-			<button class="moveAbout" on:click={() => push('/')}>ABOUT THIS SITE</button>
-			<button class="moveContact" on:click={() => push('/')}>CONTACT</button>
-			<button class="moveFuan" on:click={() => push('/fuanlist')}>CHECK FUAN!</button>	
+			<a href="#about"><img src="about.png" alt=""  class="moveAbout"></a>
+			<a href="#/fuanlist"><img src="fuanlist.png" alt=""  class="moveFuan"></a>
 		</div>
 	</div>
 </header>
@@ -33,24 +31,55 @@
 
 <style>
 	.header_container{
+		z-index: 1;
 		position: fixed;
 		width: 100%;
-		height: 60px;
+		height: 80px;
 		padding: 0 20px;
 		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	.appTitle{
+		position: absolute;
+		left: 20px;
+		top: 8px;
 	}
 
 	.header_links{
 		position: absolute;
 		right: 100px;
-		bottom: 20px;
+		bottom: 30px;
 		float: right;
 	}
 
 	.moveHome{
-		background-color: forestgreen;
+		color: white;
+		height: 50px;
+		background-color: none;
+		outline: none;
 		padding: 10px 10px;
-		margin: 12px 10px;
+		margin: 10px 10px;
+		cursor: pointer;
+	}
+
+	.moveAbout{
+		color: white;
+		height: 40px;
+		background-color: none;
+		outline: none;
+		padding: 10px 10px;
+		margin: 0px 10px -10px 10px;
+		cursor: pointer;
+	}
+
+	.moveFuan{
+		color: white;
+		height: 40px;
+		background-color: none;
+		outline: none;
+		padding: 10px 10px;
+		margin: 0px 10px -10px 10px;
+		cursor: pointer;
 	}
 
 	main {
