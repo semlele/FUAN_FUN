@@ -5161,7 +5161,7 @@ var app = (function () {
     			div5.textContent = "不安を抱える事は悪い事ではありません。それだけ、慎重に将来の事を考えている証拠です。";
     			t19 = space();
     			div6 = element("div");
-    			div6.textContent = "他の人の不安を見る事ができるので、参考になることがあるかもしれません。";
+    			div6.textContent = "他の人の不安や解決法を見る事ができるので、参考になることがあるかもしれません。";
     			t21 = space();
     			div7 = element("div");
     			div7.textContent = "様々な不安の解決法を知ることで、不安が解消され楽しく就活ができるはずです!";
@@ -5204,37 +5204,37 @@ var app = (function () {
     			attr_dev(div6, "class", "explain svelte-6stjch");
     			add_location(div6, file$5, 27, 2, 822);
     			attr_dev(div7, "class", "explain svelte-6stjch");
-    			add_location(div7, file$5, 28, 2, 887);
+    			add_location(div7, file$5, 28, 2, 891);
     			if (!src_url_equal(img0.src, img0_src_value = "worried_pic.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "");
     			attr_dev(img0, "width", "30%");
     			attr_dev(img0, "height", "30%");
-    			add_location(img0, file$5, 30, 24, 1001);
+    			add_location(img0, file$5, 30, 24, 1005);
     			attr_dev(div8, "class", "worried svelte-6stjch");
-    			add_location(div8, file$5, 30, 3, 980);
+    			add_location(div8, file$5, 30, 3, 984);
     			if (!src_url_equal(img1.src, img1_src_value = "think_pic.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "");
     			attr_dev(img1, "width", "30%");
     			attr_dev(img1, "height", "30%");
-    			add_location(img1, file$5, 31, 22, 1089);
+    			add_location(img1, file$5, 31, 22, 1093);
     			attr_dev(div9, "class", "think svelte-6stjch");
-    			add_location(div9, file$5, 31, 3, 1070);
+    			add_location(div9, file$5, 31, 3, 1074);
     			if (!src_url_equal(img2.src, img2_src_value = "find_pic.png")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "alt", "");
     			attr_dev(img2, "width", "30%");
     			attr_dev(img2, "height", "30%");
-    			add_location(img2, file$5, 32, 21, 1174);
+    			add_location(img2, file$5, 32, 21, 1178);
     			attr_dev(div10, "class", "find svelte-6stjch");
-    			add_location(div10, file$5, 32, 3, 1156);
+    			add_location(div10, file$5, 32, 3, 1160);
     			attr_dev(h21, "class", "lets svelte-6stjch");
-    			add_location(h21, file$5, 33, 3, 1240);
+    			add_location(h21, file$5, 33, 3, 1244);
     			attr_dev(div11, "class", "pictures svelte-6stjch");
-    			add_location(div11, file$5, 29, 2, 954);
+    			add_location(div11, file$5, 29, 2, 958);
     			attr_dev(div12, "class", "aboutThisSite svelte-6stjch");
     			attr_dev(div12, "id", "about");
     			add_location(div12, file$5, 20, 1, 555);
     			attr_dev(footer, "class", "svelte-6stjch");
-    			add_location(footer, file$5, 36, 1, 1303);
+    			add_location(footer, file$5, 36, 1, 1307);
     			add_location(body, file$5, 6, 0, 144);
     		},
     		l: function claim(nodes) {
@@ -5397,10 +5397,16 @@ var app = (function () {
     	let div;
     	let input0;
     	let t0;
-    	let input1;
+    	let br0;
     	let t1;
-    	let textarea0;
+    	let input1;
     	let t2;
+    	let br1;
+    	let t3;
+    	let textarea0;
+    	let t4;
+    	let br2;
+    	let t5;
     	let textarea1;
     	let mounted;
     	let dispose;
@@ -5410,24 +5416,33 @@ var app = (function () {
     			div = element("div");
     			input0 = element("input");
     			t0 = space();
-    			input1 = element("input");
+    			br0 = element("br");
     			t1 = space();
-    			textarea0 = element("textarea");
+    			input1 = element("input");
     			t2 = space();
+    			br1 = element("br");
+    			t3 = space();
+    			textarea0 = element("textarea");
+    			t4 = space();
+    			br2 = element("br");
+    			t5 = space();
     			textarea1 = element("textarea");
-    			attr_dev(input0, "class", "title svelte-sc67vv");
+    			attr_dev(input0, "class", "title svelte-5v3aod");
     			attr_dev(input0, "placeholder", "What's your name?");
     			add_location(input0, file$4, 8, 4, 145);
-    			attr_dev(input1, "class", "jobName svelte-sc67vv");
+    			add_location(br0, file$4, 9, 4, 222);
+    			attr_dev(input1, "class", "jobName svelte-5v3aod");
     			attr_dev(input1, "placeholder", "What kind of career do you want to be?");
-    			add_location(input1, file$4, 9, 4, 222);
-    			attr_dev(textarea0, "class", "contentFuan svelte-sc67vv");
+    			add_location(input1, file$4, 10, 4, 231);
+    			add_location(br1, file$4, 11, 4, 333);
+    			attr_dev(textarea0, "class", "contentFuan svelte-5v3aod");
     			attr_dev(textarea0, "placeholder", "What is your 「FUAN」 about looking for job?");
-    			add_location(textarea0, file$4, 10, 4, 324);
-    			attr_dev(textarea1, "class", "contentWO svelte-sc67vv");
+    			add_location(textarea0, file$4, 12, 4, 342);
+    			add_location(br2, file$4, 13, 4, 470);
+    			attr_dev(textarea1, "class", "contentWO svelte-5v3aod");
     			attr_dev(textarea1, "placeholder", "What are you working on?");
-    			add_location(textarea1, file$4, 11, 4, 452);
-    			attr_dev(div, "class", "editor svelte-sc67vv");
+    			add_location(textarea1, file$4, 14, 4, 479);
+    			attr_dev(div, "class", "editor svelte-5v3aod");
     			add_location(div, file$4, 7, 0, 120);
     		},
     		l: function claim(nodes) {
@@ -5438,12 +5453,18 @@ var app = (function () {
     			append_dev(div, input0);
     			set_input_value(input0, /*title*/ ctx[0]);
     			append_dev(div, t0);
+    			append_dev(div, br0);
+    			append_dev(div, t1);
     			append_dev(div, input1);
     			set_input_value(input1, /*jobName*/ ctx[1]);
-    			append_dev(div, t1);
+    			append_dev(div, t2);
+    			append_dev(div, br1);
+    			append_dev(div, t3);
     			append_dev(div, textarea0);
     			set_input_value(textarea0, /*contentFuan*/ ctx[2]);
-    			append_dev(div, t2);
+    			append_dev(div, t4);
+    			append_dev(div, br2);
+    			append_dev(div, t5);
     			append_dev(div, textarea1);
     			set_input_value(textarea1, /*contentWO*/ ctx[3]);
 
@@ -5890,16 +5911,16 @@ var app = (function () {
     }
 
     /* src/components/NoteList.svelte generated by Svelte v3.42.2 */
+
     const file$2 = "src/components/NoteList.svelte";
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
     	child_ctx[1] = list[i];
-    	child_ctx[3] = i;
     	return child_ctx;
     }
 
-    // (7:4) {#each notes as note,  index}
+    // (6:4) {#each notes as note}
     function create_each_block(ctx) {
     	let div4;
     	let div0;
@@ -5955,23 +5976,23 @@ var app = (function () {
     			t14 = text(t14_value);
     			t15 = space();
     			set_style(span0, "color", "green");
-    			add_location(span0, file$2, 8, 36, 201);
+    			add_location(span0, file$2, 7, 36, 150);
     			attr_dev(div0, "class", "card-title svelte-1wjdnxv");
-    			add_location(div0, file$2, 8, 12, 177);
+    			add_location(div0, file$2, 7, 12, 126);
     			set_style(span1, "color", "green");
-    			add_location(span1, file$2, 9, 34, 310);
+    			add_location(span1, file$2, 8, 34, 259);
     			attr_dev(div1, "class", "card-job svelte-1wjdnxv");
-    			add_location(div1, file$2, 9, 12, 288);
+    			add_location(div1, file$2, 8, 12, 237);
     			set_style(span2, "color", "green");
-    			add_location(span2, file$2, 10, 42, 431);
+    			add_location(span2, file$2, 9, 42, 380);
     			attr_dev(div2, "class", "card-contentFuan svelte-1wjdnxv");
-    			add_location(div2, file$2, 10, 12, 401);
+    			add_location(div2, file$2, 9, 12, 350);
     			set_style(span3, "color", "green");
-    			add_location(span3, file$2, 11, 40, 552);
+    			add_location(span3, file$2, 10, 40, 501);
     			attr_dev(div3, "class", "card-contentWO svelte-1wjdnxv");
-    			add_location(div3, file$2, 11, 12, 524);
+    			add_location(div3, file$2, 10, 12, 473);
     			attr_dev(div4, "class", "card svelte-1wjdnxv");
-    			add_location(div4, file$2, 7, 8, 146);
+    			add_location(div4, file$2, 6, 8, 95);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div4, anchor);
@@ -6011,7 +6032,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(7:4) {#each notes as note,  index}",
+    		source: "(6:4) {#each notes as note}",
     		ctx
     	});
 
@@ -6037,7 +6058,7 @@ var app = (function () {
     			}
 
     			attr_dev(div, "class", "note svelte-1wjdnxv");
-    			add_location(div, file$2, 5, 0, 85);
+    			add_location(div, file$2, 4, 0, 42);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -6107,7 +6128,7 @@ var app = (function () {
     		if ('notes' in $$props) $$invalidate(0, notes = $$props.notes);
     	};
 
-    	$$self.$capture_state = () => ({ push, notes });
+    	$$self.$capture_state = () => ({ notes });
 
     	$$self.$inject_state = $$props => {
     		if ('notes' in $$props) $$invalidate(0, notes = $$props.notes);
@@ -6291,30 +6312,30 @@ var app = (function () {
     			if (!src_url_equal(img0.src, img0_src_value = "title.png")) attr_dev(img0, "src", img0_src_value);
     			attr_dev(img0, "alt", "");
     			attr_dev(img0, "class", "moveHome svelte-1gmx54h");
-    			add_location(img0, file, 14, 18, 339);
+    			add_location(img0, file, 15, 18, 340);
     			attr_dev(a0, "href", "#top");
-    			add_location(a0, file, 14, 3, 324);
+    			add_location(a0, file, 15, 3, 325);
     			attr_dev(div0, "class", "appTitle svelte-1gmx54h");
-    			add_location(div0, file, 13, 2, 298);
+    			add_location(div0, file, 14, 2, 299);
     			if (!src_url_equal(img1.src, img1_src_value = "about.png")) attr_dev(img1, "src", img1_src_value);
     			attr_dev(img1, "alt", "");
     			attr_dev(img1, "class", "moveAbout svelte-1gmx54h");
-    			add_location(img1, file, 17, 20, 448);
+    			add_location(img1, file, 18, 20, 449);
     			attr_dev(a1, "href", "#about");
-    			add_location(a1, file, 17, 3, 431);
+    			add_location(a1, file, 18, 3, 432);
     			if (!src_url_equal(img2.src, img2_src_value = "fuanlist.png")) attr_dev(img2, "src", img2_src_value);
     			attr_dev(img2, "alt", "");
     			attr_dev(img2, "class", "moveFuan svelte-1gmx54h");
-    			add_location(img2, file, 18, 24, 524);
+    			add_location(img2, file, 19, 24, 525);
     			attr_dev(a2, "href", "#/fuanlist");
-    			add_location(a2, file, 18, 3, 503);
+    			add_location(a2, file, 19, 3, 504);
     			attr_dev(div1, "class", "header_links svelte-1gmx54h");
-    			add_location(div1, file, 16, 2, 401);
+    			add_location(div1, file, 17, 2, 402);
     			attr_dev(div2, "class", "header_container svelte-1gmx54h");
-    			add_location(div2, file, 12, 1, 265);
-    			add_location(header, file, 11, 0, 255);
+    			add_location(div2, file, 13, 1, 266);
+    			add_location(header, file, 12, 0, 256);
     			attr_dev(main, "class", "svelte-1gmx54h");
-    			add_location(main, file, 23, 0, 606);
+    			add_location(main, file, 24, 0, 607);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");

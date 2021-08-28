@@ -25,7 +25,7 @@
 		<br>
 		<div class="explain">本サイトは、不安を吐露し、その課題をどのように解決していくかを皆で共有し合うSNSです。</div>
 		<div class="explain">不安を抱える事は悪い事ではありません。それだけ、慎重に将来の事を考えている証拠です。</div>
-		<div class="explain">他の人の不安を見る事ができるので、参考になることがあるかもしれません。</div>
+		<div class="explain">他の人の不安や解決法を見る事ができるので、参考になることがあるかもしれません。</div>
 		<div class="explain">様々な不安の解決法を知ることで、不安が解消され楽しく就活ができるはずです!</div>
 		<div class="pictures">
 			<div class="worried"><img src="worried_pic.png" alt="" width="30%" height="30%"></div>

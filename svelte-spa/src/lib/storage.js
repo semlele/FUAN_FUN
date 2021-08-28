@@ -14,10 +14,3 @@ export const addNote = (note) => {
     const newNotes = [...currentNotes, note];
     saveNotes(newNotes);
 }
-
-export const overwriteNote = (index, note) => {
-    const currentNotes = loadNotes();
-    const newNotes = [...currentNotes];
-    newNotes[index] = note;
-    saveNotes(newNotes);
-};

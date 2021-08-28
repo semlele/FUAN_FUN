@@ -7,8 +7,11 @@
 
 <div class="editor">
     <input class="title" placeholder="What's your name?" bind:value={title}>
+    <br>
     <input class="jobName" placeholder="What kind of career do you want to be?" bind:value={jobName}>
+    <br>
     <textarea class="contentFuan" placeholder="What is your 「FUAN」 about looking for job?" bind:value={contentFuan}></textarea>
+    <br>
     <textarea class="contentWO" placeholder="What are you working on?" bind:value={contentWO}></textarea>
 </div>
 
@@ -24,10 +27,10 @@
     display: block;
     background-color: transparent;
     border: none;
-    border-left: 2px solid forestgreen;
+    border-left: 3px solid forestgreen;
     font-size: 40px;
     padding: 0.5rem 1rem;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.5em;
     width: 100%;
     }
 
@@ -36,10 +39,10 @@
     display: block;
     background-color: transparent;
     border: none;
-    border-left: 2px solid forestgreen;
+    border-left: 3px solid forestgreen;
     font-size: 40px;
     padding: 0.5rem 1rem;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.5em;
     width: 100%;
     }
 
@@ -49,10 +52,10 @@
     display: block;
     background-color: transparent;
     border: none;
-    border-left: 2px solid forestgreen;
-    font-size: 25px;
+    border-left: 3px solid forestgreen;
+    font-size: 30px;
     padding: 1rem 1rem;
-    margin-bottom: 0.3em;
+    margin-bottom: 0.5em;
     width: 100%;
     resize: none;
     }
@@ -62,8 +65,8 @@
     display: block;
     background-color: transparent;
     border: none;
-    border-left: 2px solid forestgreen;
-    font-size: 25px;
+    border-left: 3px solid forestgreen;
+    font-size: 30px;
     padding: 1rem 1rem;
     margin-bottom: 0.3em;
     width: 100%;

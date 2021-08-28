@@ -1,10 +1,9 @@
 <script>
-    import {push} from "svelte-spa-router"
     export let notes;
 </script>
 
 <div class="note">
-    {#each notes as note,  index}
+    {#each notes as note}
         <div class="card">
             <div class="card-title"><span style="color:green;">Name:</span> &nbsp&nbsp&nbsp;{note.title}</div>
             <div class="card-job"><span style="color:green;">Carrer:</span> &nbsp&nbsp&nbsp;{note.jobName}</div>
