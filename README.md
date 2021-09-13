@@ -1,6 +1,6 @@
 # App Title: FUAN⇨FUN
 ---
-*This is the web application developed for Geek-CAMP hackathon vol.8 held on 8/27-8/28 in 2021 @online(Zoom).*
+*This is the web application developed for Geek-CAMP hackathon vol.8 by サポーターズ held on 8/27-8/28 in 2021 @online(Zoom).*
 ---
 developed by: svelte(Typescript), express.js(node.js) , SQLite
 
